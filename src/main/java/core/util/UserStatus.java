@@ -1,6 +1,6 @@
-package util;
+package core.util;
 
-public enum Status {
+public enum UserStatus {
     WAITING_ACTIVATION,
     ACTIVATED,
     DEACTIVATED

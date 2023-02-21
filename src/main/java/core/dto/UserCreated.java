@@ -1,7 +1,7 @@
-package dto;
+package core.dto;
 
-import util.Role;
-import util.Status;
+import core.util.UserRole;
+import core.util.UserStatus;
 
 import java.util.UUID;
 
@@ -10,16 +10,16 @@ public class UserCreated {
     private String FIOuser;
     private String mailUser;
     private String password;
-    private Role UserRole;
-    private Status UserStatus;
+    private UserRole userRole;
+    private UserStatus userStatus;
 
-    public UserCreated(UUID uuidUser, String FIOuser, String mailUser, String password, Role userRole, Status userStatus) {
+    public UserCreated(UUID uuidUser, String FIOuser, String mailUser, String password, UserRole userRole, UserStatus userStatus) {
         this.uuidUser = uuidUser;
         this.FIOuser = FIOuser;
         this.mailUser = mailUser;
         this.password = password;
-        UserRole = userRole;
-        UserStatus = userStatus;
+        this.userRole = userRole;
+        this.userStatus = userStatus;
     }
 
     public UUID getUuidUser() {
@@ -54,20 +54,20 @@ public class UserCreated {
         this.password = password;
     }
 
-    public Role getUserRole() {
-        return UserRole;
+    public UserRole getUserRole() {
+        return userRole;
     }
 
-    public void setUserRole(Role userRole) {
-        UserRole = userRole;
+    public void setUserRole(UserRole userRole) {
+        userRole = userRole;
     }
 
-    public Status getUserStatus() {
-        return UserStatus;
+    public core.util.UserStatus getUserStatus() {
+        return userStatus;
     }
 
-    public void setUserStatus(Status userStatus) {
-        UserStatus = userStatus;
+    public void setUserStatus(core.util.UserStatus userStatus) {
+        userStatus = userStatus;
     }
 
     @Override
@@ -77,8 +77,8 @@ public class UserCreated {
                 ", FIOuser='" + FIOuser + '\'' +
                 ", mailUser='" + mailUser + '\'' +
                 ", password='" + password + '\'' +
-                ", UserRole=" + UserRole +
-                ", UserStatus=" + UserStatus +
+                ", UserRole=" + userRole +
+                ", UserStatus=" + userStatus +
                 '}';
     }
 }
